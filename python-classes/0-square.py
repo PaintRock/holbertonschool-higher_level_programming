@@ -3,6 +3,5 @@
 
 
 class Square:
-
-#class cannot be empty so use pass
-pass
+    """class cannot be empty so use pass"""
+    pass
