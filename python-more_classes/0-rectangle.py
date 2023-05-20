@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """create an empty class called Rectangle"""
-"""include pass because it cannot be empty"""
 
 
+"""create the class Rectangle"""
 class Rectangle
 
-
+"""include pass because it cannot be empty"""
 pass
