@@ -3,7 +3,9 @@
 
 
 """create the class Rectangle"""
-class Rectangle
 
-"""include pass because it cannot be empty"""
-pass
+
+class Rectangle:
+
+    """include pass because it cannot be empty"""
+    pass
