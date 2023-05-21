@@ -12,7 +12,7 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        self.__postiion = position
+        self.__postion = position
 
     def area(self):
         return self.__size ** 2
@@ -35,7 +35,7 @@ class Square:
         return self.__position
 
     @position.setter
-    def positiion(self, value):
+    def position(self, value):
         if not isinstance(value, tuple) or len(value) != 2 or \
             not isinstance(value[0], int) or not isinstance(value[1], int) or \
                 value[0] < 0 or value[1] < 0:
@@ -48,7 +48,7 @@ class Square:
         if self.__size == 0:
             print()
         else:
+            for _ in range(self.__postion[1]):
+                print()
             for _ in range(self.__size):
                 print("#" * self.__size)
-            for _ in range(self.__postiion[1]):
-                print()
