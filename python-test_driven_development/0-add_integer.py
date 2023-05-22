@@ -1,6 +1,7 @@
-#!/usr.bin.python3
+#!/usr/bin/python3
 def add_integer(a, b=98)
 """a function that adds 2 integers"""
+
 
 """raises TypeError if either input is not an integer"""
 
