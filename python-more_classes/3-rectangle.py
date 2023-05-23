@@ -46,3 +46,17 @@ class Rectangle:
             return 0
         else:
             return self.width * 2 + self.__height * 2
+
+    """ prints rectangle with # """
+    def __str__(self):
+        rectangle = []
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    rectangle.append("#")
+                if i < self.__height - 1:
+                    rectangle.append("\n")
+        rectangle = "".join(rectangle)
+        return rectangle
