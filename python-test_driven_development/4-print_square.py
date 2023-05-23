@@ -2,6 +2,7 @@
 """program that prints a square"""
 
 
+#!/usr/bin/python3
 """Class attribute"""
 
 
