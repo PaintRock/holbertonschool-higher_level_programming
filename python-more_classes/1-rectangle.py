@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-"""create an empty class called Rectangle"""
-
-
-"""create the class Rectangle"""
+"""Defines a Rectangle"""
 
 
 class Rectangle:
+    """create the class Rectangle"""
 
     """Instantiation with optional width and height"""
     def __init__(self, width=0, height=0):
