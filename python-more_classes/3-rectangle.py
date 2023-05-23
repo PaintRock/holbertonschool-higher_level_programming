@@ -59,4 +59,4 @@ class Rectangle:
                 if i < self.__height - 1:
                     tangleO.append("\n")
         tangleO = "".join(tangleO)
-        return tangleO  
+        return tangleO

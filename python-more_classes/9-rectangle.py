@@ -88,4 +88,6 @@ class Rectangle:
     """ returns a Rectangle instance with equal width and height """
     @classmethod
     def square(cls, size=0):
+        if width == height == size:
+            raise ValueError()
         return cls(width=size, height=size)
