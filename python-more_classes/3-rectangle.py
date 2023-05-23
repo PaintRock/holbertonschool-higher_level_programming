@@ -59,7 +59,4 @@ class Rectangle:
                 if i < self.__height - 1:
                     tangleO.append("\n")
         tangleO = "".join(tangleO)
-        return tangleO
-
-    def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)  
+        return tangleO  
