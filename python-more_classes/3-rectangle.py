@@ -46,17 +46,3 @@ class Rectangle:
             return 0
         else:
             return self.width * 2 + self.__height * 2
-
-    def__str__(self):
-        """prints the rectangle using # character"""
-        if self.__width == 0 or self. height == 0:
-           tangle = ""
-
-        for i in range(self.__height):
-            for j in range(self.__width):
-                rect += "#"
-            if i != self.__height -1:
-                rect += "\n"
-            return rect
-        else:
-            return ""
