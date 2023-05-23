@@ -49,14 +49,14 @@ class Rectangle:
 
     """ prints rectangle with # """
     def __str__(self):
-        rectangle = []
+        tangleO = []
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
             for i in range(self.__height):
                 for j in range(self.__width):
-                    rectangle.append("#")
+                    tangleO.append("#")
                 if i < self.__height - 1:
-                    rectangle.append("\n")
-        rectangle = "".join(rectangle)
-        return rectangle
+                    tangleO.append("\n")
+        tangleO = "".join(tangleO)
+        return tangleO
