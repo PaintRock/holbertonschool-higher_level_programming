@@ -4,9 +4,10 @@
 
 def matrix_divided(matrix, div):
 
+    "Is there an int"
     if div is None:
         raise TypeError("div must be a number")
-
+    "Is it a zero"
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
