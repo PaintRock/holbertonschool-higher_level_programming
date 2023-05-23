@@ -60,3 +60,6 @@ class Rectangle:
                     tangleO.append("\n")
         tangleO = "".join(tangleO)
         return tangleO
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)  
