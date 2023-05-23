@@ -46,3 +46,23 @@ class Rectangle:
             return 0
         else:
             return self.width * 2 + self.__height * 2
+
+    """ prints rectangle with # """
+    def __str__(self):
+        tangleO = []
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    tangleO.append("#")
+                if i < self.__height - 1:
+                    tangleO.append("\n")
+        tangleO = "".join(tangleO)
+        return tangleO
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        print("Bye rectangle...")
