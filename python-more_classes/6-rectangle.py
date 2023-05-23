@@ -6,11 +6,14 @@
 
 
 class Rectangle:
+    """Class attribute"""
+    number_of_instances = 0
 
     """include class because it cannot be empty"""
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -46,3 +49,24 @@ class Rectangle:
             return 0
         else:
             return self.width * 2 + self.__height * 2
+
+    """ prints rectangle with # """
+    def __str__(self):
+        tangleO = []
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            for i in range(self.__height):
+                for j in range(self.__width):
+                    tangleO.append("#")
+                if i < self.__height - 1:
+                    tangleO.append("\n")
+        tangleO = "".join(tangleO)
+        return tangleO
+
+    def __repr__(self):
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
