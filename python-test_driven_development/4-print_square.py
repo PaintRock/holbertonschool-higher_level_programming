@@ -1,9 +1,5 @@
-#!/bin/usr/python3
-"""program that prints a square"""
-
-
 #!/usr/bin/python3
-"""Class attribute"""
+"""program that prints a square"""
 
 
 def print_square(size):
