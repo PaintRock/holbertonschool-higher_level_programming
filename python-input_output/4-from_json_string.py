@@ -5,4 +5,4 @@ import json
 
 def from_json_string(my_stc):
     """Appends a file"""
-    return json.dumps(my_ssh)
+    return json.loads(my_str)
