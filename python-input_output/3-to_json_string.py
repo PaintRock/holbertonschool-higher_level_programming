@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 """retrn the JSON reperesentation of an object string"""
-
+import json
 
 def to_json_string(my_obj):
     """Appends a file"""
-    try:
-        json_string = str(my_obj).replace("'", '"')
-        return json_string
-    except Exception:
-        return None
+    return json.dumps(my_obj)
