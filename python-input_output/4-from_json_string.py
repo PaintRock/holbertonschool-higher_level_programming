@@ -3,6 +3,6 @@
 import json
 
 
-def from_json_string(my_stc):
+def from_json_string(my_str):
     """Appends a file"""
     return json.loads(my_str)
