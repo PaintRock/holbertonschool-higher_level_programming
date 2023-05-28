@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""read a file"""
+"""Write a file"""
 
 
-def read_file(filename=""):
-    """Opens and reads a specific file"""
-    with open(filename, encoding="utf-8") as file:
-        print(file.read(), end="")
+def write_file(filename="", text=""):
+    """Writes to a file"""
+    with open(filename,"w", encoding="utf-8") as file:
+        charz = file.write(text)
+    return charz
