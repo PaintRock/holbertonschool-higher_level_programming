@@ -4,4 +4,8 @@
 
 def to_json_string(my_obj):
     """Appends a file"""
-    return json.dumps(my_obj)
+    try:
+        json_string = str(my_obj).replace("'", '"')
+        return json.str
+    except Exception:
+        return None
