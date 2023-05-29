@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Adds all args to a Python list and saves to a file"""
-
-
 import sys
-from save_to_json_file import 5-save_to_json_file
-from load_to_json_file import 6-load_from_json_file
+from save_to_json_file=__import__(5-save_to_json_file)
+from load_to_json_file=__import__(6-load_from_json_file)
+
 
 try:
 
@@ -19,5 +18,5 @@ try:
     """Add command-line arguments to the existing list"""
     existing_list.extend(args)
 
-    """Save the updated list to the file"""
+    """"Save the updated list to the file"""
     save_to_json_file(existing_list, "add_item.json")
