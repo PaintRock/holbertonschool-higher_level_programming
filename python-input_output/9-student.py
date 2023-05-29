@@ -9,6 +9,6 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-        def to json(self):
-        """Public method to retrieve a dictionary rep of Student"""
-    return self.__dict__
+    def to json(self):
+    """Public method to retrieve a dictionary rep of Student"""
+        return self.__dict__
