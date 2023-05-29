@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """Adds all args to a Python list and saves to a file"""
+import json
 
 
 from save_to_json_file import 5-save_to_json_file
