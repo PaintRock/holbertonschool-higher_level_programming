@@ -3,6 +3,6 @@
 directly or indirectly from the specified class"""
 
 
-def inherits_from(obj, a_class)
+def inherits_from(obj, a_class):
     """checks to see if the subclass is a part of the superclass"""
     return issubclass(type(obj), a_class) and type(obj) != a_class
