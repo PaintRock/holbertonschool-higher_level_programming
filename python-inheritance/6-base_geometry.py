@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """Class BaseGeometry with public instance and exception"""
 
 
