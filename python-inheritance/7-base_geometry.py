@@ -7,11 +7,11 @@ that raises an Exception with a message.  And another public instance method
 class BaseGeometry:
     """Public instance method 'def area(self)' """
     def area(self):
-        raise Exception("area{} is not implemented")
+        raise Exception("area() is not implemented")
 
     """Public instance method 'def integer_validator'"""
     def integer_validator(self, name, value):
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError(f"{} must be greater than 0")
+            raise ValueError(f"{name} must be greater than 0")
