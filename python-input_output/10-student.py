@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module Student"""
+"""Model Student"""
 
 
 class Student:
@@ -11,12 +11,13 @@ class Student:
 
 
     def to_json(self, attrs=None):
-        """public method"""
+        """ function that returns dictionary description with simple
+        data structure for JSON serialization of an object """
         if attrs is None:
             return self.__dict__
         else:
-            make_new = {}
+            new_dict = {}
             for item in attrs:
                 if hasattr(self, item):
-                    make_new[item] gitattr(self, item)
-        return make_new
+                    new_dict[item] = getattr(self, item)
+            return new_dict
