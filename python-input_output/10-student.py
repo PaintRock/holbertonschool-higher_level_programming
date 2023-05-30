@@ -19,3 +19,4 @@ class Student:
                 if hasattr(self, item):
                     make_new[item] gitattr(self, item)
         return make_new
+    
