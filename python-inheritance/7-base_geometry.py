@@ -7,7 +7,7 @@ that raises an Exception with a message.  And another public instance method
 class BaseGeometry:
     """Public instance method 'def area(self)' """
     def area(self):
-        raise Exception(area{} is not implemented)
+        raise Exception("area{} is not implemented")
 
     """Public instance method 'def integer_validator'"""
     def integer_validator(self, name, value):
