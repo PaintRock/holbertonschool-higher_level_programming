@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Method that contain the Base-Geometry class"""
+"""Method that inherits from BaseGeometry"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
