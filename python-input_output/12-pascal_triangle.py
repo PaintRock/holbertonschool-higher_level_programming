@@ -1,2 +1,2 @@
-#1/usr/bin/python
+#!/usr/bin/python
 """returns a list or lists of integers representing"""
