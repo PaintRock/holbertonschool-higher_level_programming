@@ -3,6 +3,6 @@
 
 
 class BaseGeometry:
-
+    """Pulic instance and exception"""
     def area(self):
         raise Exception("area() is not implemented")
