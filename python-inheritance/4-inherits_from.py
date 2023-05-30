@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 """Returns True if the object is an instance that inherited
 directly or indirectly from the specified class"""
 
