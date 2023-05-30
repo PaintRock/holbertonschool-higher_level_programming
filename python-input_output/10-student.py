@@ -9,10 +9,8 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-
     def to_json(self, attrs=None):
-        """ function that returns dictionary description with simple
-        data structure for JSON serialization of an object """
+        """ data structure for JSON serialization of an object """
         if attrs is None:
             return self.__dict__
         else:
