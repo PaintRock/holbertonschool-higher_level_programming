@@ -9,7 +9,7 @@ class BaseGeometry:
     def area(self):
         raise Exception("area() is not implemented")
     
-    def __init__(self)
+    
 
     """Public instance method 'def integer_validator'"""
     def integer_validator(self, name, value):
