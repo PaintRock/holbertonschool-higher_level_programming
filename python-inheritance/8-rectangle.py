@@ -2,7 +2,7 @@
 """class rectangle that inherits from BaseGeometry"""
 
 class Rectangle(BaseGeometry):
-"""Istantiation with private width and height. validator confirms positive integers"""
+    """Instantiation with private width and height. Validator confirms positive integers"""
     def __init__(self, width, height):
         self.__width = 0
         self.__height = 0
