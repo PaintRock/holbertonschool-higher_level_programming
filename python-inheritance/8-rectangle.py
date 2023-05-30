@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""class rectangle that inherits from BaseGeometry"""
+"""Class rectangle that inherits from BaseGeometry"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
