@@ -14,9 +14,8 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
-            make_new ={}
+            make_new = {}
             for item in attrs:
                 if hasattr(self, item):
                     make_new[item] gitattr(self, item)
         return make_new
-    
