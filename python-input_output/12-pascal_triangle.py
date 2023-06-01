@@ -2,6 +2,7 @@
 """returns a list or lists of integers representing"""
 
 
+"""defint triangle. if less than 0 return nothing"""
 def pascal_triangle(n):
     if n <= 0:
         return []
