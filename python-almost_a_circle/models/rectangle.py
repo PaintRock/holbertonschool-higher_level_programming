@@ -1,4 +1,4 @@
-#1/usr/bin/python3
+#!/usr/bin/python3
 """Write a class Rectangle that inherits from Base"""
 
 
