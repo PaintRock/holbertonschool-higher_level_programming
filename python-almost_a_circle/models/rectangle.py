@@ -85,13 +85,6 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height
             )
 
-    def display(self):
-        """Prints the Rectangle instance with the character #"""
-        for _ in range(self.__y):
-            print()
-        for _ in range(self.__height):
-            print(" " * self.__x + "#" * self.__width)
-
     def update(self, *args):
         """Updates to include args"""
         if len(args) >= 1:
@@ -104,3 +97,23 @@ class Rectangle(Base):
             self.x = args[3]
         if len(args) >= 5:
             self.y = args[4]
+
+    def update(self, *args, **kwargs):
+        """For some reason we want to change to kwargs"""
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
+    

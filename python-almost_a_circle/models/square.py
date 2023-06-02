@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Create a class Square from a Rectangle"""
-from model.rectangle import Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
