@@ -93,6 +93,7 @@ class Rectangle(Base):
             print(" " * self.__x + "#" * self.__width)
 
     def update(self, *args):
+        """Updates to include args"""
         if len(args) >= 1:
             self.id = args[0]
         if len(args) >= 2:
