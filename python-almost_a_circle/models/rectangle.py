@@ -80,6 +80,6 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
-        """Overrides the string, maybe"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, 
+        """Overrides the string"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
             self.__x, self.__y, self.__width, self.__height)
