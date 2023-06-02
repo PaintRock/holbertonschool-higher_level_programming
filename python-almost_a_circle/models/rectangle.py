@@ -7,6 +7,7 @@ class Rectangle(Base):
     """Create a child class of Base called Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initiate the attributes of the Rectangle"""
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -15,12 +16,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ Return width """
+        """ Getter for width value """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Set width """
+        """ Set width and raise errors if incorrect value is entered"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -29,12 +30,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ Return height """
+        """ Getter for height value"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Set height """
+        """ Set height and raise errors if incorrect value is entered"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -43,12 +44,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ Return x """
+        """ Get x value """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ Set x """
+        """ Set x and raise errors if incorrect value is entered """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -57,12 +58,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ Return y """
+        """ Get y value """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ Set y """
+        """ Set y and raise errors if incorrect value is entered """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -70,4 +71,5 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """Calculate area (width times height)"""
         return self.__width * self.__height
