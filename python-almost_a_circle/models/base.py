@@ -43,3 +43,23 @@ class Base:
 
         dummy.update(**dictionary)  # Update attributes using **kwargs
         return dummy
+
+    @classmethod
+    def from_json_string(cls, json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        instances = []
+        try:
+            with open(filename, 'r') as file:
+                json_data = file.read()
+                data = cls.from_json_string(json_data)
+                instances = [cls.create(**obj) for obj in data]
+        except FileNotFoundError:
+            pass
+        return instances
