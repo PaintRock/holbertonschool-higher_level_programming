@@ -31,3 +31,15 @@ class Base:
             data = [obj.to_dictionary() for obj in list_objs]
         with open(filename, 'w') as file:
             file.write(cls.to_json_string(data))
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)  # Create a dummy Rectangle instance
+        elif cls.__name__ == "Square":
+            dummy = cls(1)  # Create a dummy Square instance
+        else:
+            return None
+
+        dummy.update(**dictionary)  # Update attributes using **kwargs
+        return dummy
