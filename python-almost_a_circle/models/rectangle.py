@@ -101,16 +101,22 @@ class Rectangle(Base):
         }
 
     def update(self, *args, **kwargs):
-        """ Public instance method that assigns an argument to each attribute."""
-        attributes = ["id", 'width', "height", 'x', "y"]
-        #  if args exist and is not empty, use args
-        if args and len(args) > 0:
-            for attribute, value in zip(attributes, args):
-                setattr(self, attribute, value)
-        # if no args exist or args id empty use kwargs
+        if args:  # Check if *args exists and is not empty
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.size = args[1]
+            if len(args) >= 3:
+                self.x = args[2]
+            if len(args) >= 4:
+                self.y = args[3]
         else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'size' in kwargs:
+                self.size = kwargs['size']
+            if 'x' in kwargs:
+                self.x = kwargs['x']
 
     def __str__(self):
         """ Public instance method that returns a string representation of
