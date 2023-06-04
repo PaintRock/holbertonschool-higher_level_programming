@@ -101,7 +101,8 @@ class Rectangle(Base):
         }
 
     def update(self, *args, **kwargs):
-        """ Public instance method that assigns an argument to each attribute."""
+        """ Public instance method that assigns an argument to
+        each attribute."""
         attributes = ["id", 'width', "height", 'x', "y"]
         #  if args exist and is not empty, use args
         if args and len(args) > 0:
