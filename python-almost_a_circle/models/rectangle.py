@@ -78,26 +78,20 @@ class Rectangle(Base):
 
 # Public instance methods
     def area(self):
-        """ Public instance method that returns the area of the Rectangle.
-            Returns:
-                The area of the Rectangle. """
+        """ Public instance method for th area of the Rectangle. """
         return self.__width * self.__height
 
     def display(self):
         """ Public instance method that prints
         the Rectangle instance with '#' character in stdout.
-        ''Updated:'' to handle x and y offsets.
-        Returns: The area of the Rectangle. """
+        The area of the Rectangle. """
         for _ in range(self.__y):
             print()
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)
 
     def to_dictionary(self):
-        """ Public instance that returns the dictionary representation
-        of a Rectangle.
-        Returns:
-            A dictionary representation of a Rectangle. """
+        """ Public instance that returns the dictionary representation"""
         return {
             "id":  self.id,
             "width": self.width,
@@ -107,24 +101,7 @@ class Rectangle(Base):
         }
 
     def update(self, *args, **kwargs):
-        """ Public instance method that assigns an argument to each attribute.
-        Args:
-            *args (list): A list of arguments.
-                1st argument should be the id attribute
-                2nd argument should be the width attribute
-                3rd argument should be the height attribute
-                4th argument should be the x attribute
-                5th argument should be the y attribute
-            ''updated'': to assign key/value argument to attributes.
-            **kwargs (dict): A dictionary of key/value
-            arguments to assign to attributes.
-                **kwargs are skipped if *args exist and is
-                not empty
-            Each key in the dictionary represents an attribute to the instance.
-            **order was super important for args to work
-        but with kwargs order is not important.**
-        Returns: None
-                """
+        """ Public instance method that assigns an argument to each attribute."""
         attributes = ["id", 'width', "height", 'x', "y"]
         #  if args exist and is not empty, use args
         if args and len(args) > 0:
@@ -137,10 +114,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Public instance method that returns a string representation of
-        the Rectangle instance.
-        Return:
-        [Rectangle] (<id>) <x>/<y> - <width>/<height>
-        """
+        the Rectangle instance."""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height
             ))
