@@ -12,12 +12,12 @@ class Rectangle(Base):
     """ Rectangle class that inherits from Base class.    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Constructor of the Rectangle class that inherits from Base class. """
+        """ Constructor of the Rectangle class. Inherits from Base class. """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
 # Getters and Setters
     @property
@@ -28,7 +28,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ Setter for the __width of the Rectangle"""
-        if not isinstance(value, int):
+        if type value is not (int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
@@ -41,10 +41,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """ Setter for the __height of the Rectangle
-            Args:
-                value (int): The height of the Rectangle. """
-        if not isinstance(value, int):
+        """ Setter for the height of the Rectangle """
+        if type value is not (int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
@@ -52,15 +50,13 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ Getter for the private instance attribute: 'x' of the Rectangle.
-            Returns:
-                The x of the Rectangle. (horizontal offset) """
+        """ Getter for the private instance attribute: 'x' of the Rectangle """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ Setter for the x (horizontal offset) of the Rectangle. """
-        if not isinstance(value, int):
+        """ Setter for the x of the Rectangle. """
+        if type value is not (int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -68,15 +64,13 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """ Getter for the private instance attribute y (vertical offset) of
-        the Rectangle. """
+        """ Getter for the private instance attribute y of the Rectangle. """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ Setter for the private instance attribute y (vertical offset) of
-        the Rectangle. """
-        if not isinstance(value, int):
+        """ Setter for the private instance attribute y """
+        if type value is not (int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
