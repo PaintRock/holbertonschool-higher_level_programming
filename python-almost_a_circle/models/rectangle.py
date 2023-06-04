@@ -9,27 +9,10 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """ Rectangle class that inherits from Base class.
-
-    Args:
-        Base (class): The class to inherit from.
-            Base: public instance attribute: ''id''
-    """
+    """ Rectangle class that inherits from Base class.    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Constructor of the Rectangle class that inherits from Base class.
-        Parameters:
-        Call the super class with id: super().__init__(id)
-        id (int, optional): id of the instance (inherited from Base)
-        Private instance attributes:
-            width (int): width of the Rectangle
-            height (int): height of the Rectangle
-            x (int): horizontal offset (default 0)
-            y (int): vertical offset (default 0)
-        Raises:
-        TypeError: If width, height, x or y is not an integer
-        ValueError: If width or height is less than or equal to zero,
-        or if x or y is less than zero """
+        """ Constructor of the Rectangle class that inherits from Base class. """
         super().__init__(id)
         self.width = width
         self.height = height
@@ -39,17 +22,12 @@ class Rectangle(Base):
 # Getters and Setters
     @property
     def width(self):
-        """ Getter for the private instance attribute:
-                'width' of the Rectangle.
-            Returns:
-                The width of the Rectangle. """
+        """ Getter for the private instance attribute"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Setter for the __width of the Rectangle.
-            Args:
-                value (int): The width of the Rectangle. """
+        """ Setter for the __width of the Rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -58,10 +36,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """ Getter for the private instance attribute:
-                'height' of the Rectangle.
-            Returns:
-                The height of the Rectangle."""
+        """ Getter"""
         return self.__height
 
     @height.setter
