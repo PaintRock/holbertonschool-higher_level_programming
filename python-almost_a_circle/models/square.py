@@ -26,6 +26,7 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width
         )
+
     def to_dictionary(self):
         """ Public instance that returns the dictionary representation"""
         return {
@@ -37,7 +38,9 @@ class Square(Rectangle):
         }
 
     def update(self, *args, **kwargs):
-        """ Public instance method that assigns an argument to each attribute."""
+        """ Public instance method that assigns an argument to each
+        attribute."""
+
         attributes = ["id", 'width', "height", 'x', "y"]
         #  if args exist and is not empty, use args
         if args and len(args) > 0:
