@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Doc """
+import unittest
+from models.rectangle import Rectangle
 import os, sys
 import subprocess
 
