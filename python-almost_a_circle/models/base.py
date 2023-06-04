@@ -2,6 +2,7 @@
 """Create a class called base"""
 import json
 
+
 class Base:
     """private class attribute """
 
