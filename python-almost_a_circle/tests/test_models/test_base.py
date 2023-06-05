@@ -1,15 +1,7 @@
 #!/usr/bin/python3
-import inspect
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
 import unittest
-import pep8
-import json
-import os
-
-
 from models.base import Base
+
 
 class TestBase(unittest.TestCase):
 
@@ -61,8 +53,27 @@ class TestBase(unittest.TestCase):
         self.assertEqual(data[2]['id'], 3)
 
     def test_load_from_file(self):
-        # Create a test JSON file with some data
-        # Call load_from_file and assert if the loaded objects are correct
+        test_file = 'test_data.json'
+        test_data = [
+            {"id": 1},
+            {"id": 2},
+            {"id": 3}
+        ]
+        # Save test data to a file
+        Base.save_to_file(test_data, test_file)
+
+        # Load objects from the file
+        loaded_data = Base.load_from_file(test_file)
+
+        # Assert the loaded data is correct
+        self.assertEqual(len(loaded_data), 3)
+        self.assertEqual(loaded_data[0]['id'], 1)
+        self.assertEqual(loaded_data[1]['id'], 2)
+        self.assertEqual(loaded_data[2]['id'], 3)
+
+        # Cleanup: Remove the test file
+        os.remove(test_file)
+
 
 if __name__ == '__main__':
     unittest.main()
