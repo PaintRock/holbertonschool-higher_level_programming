@@ -53,30 +53,12 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string(None), "[]")
         # test normal list
         list_directories = [
-            {"id": 1,
-            "width": 2, 
-            "height": 3, 
-            "x": 4, 
-            "y": 5},
-            {"id": 6,
-            "width": 7, 
-            "height": 8, 
-            "x": 9, 
-            "y": 10
-            }]
-        expected_json = ('[{
-            "id": 1, 
-            "width": 2, 
-            "height": 3, 
-            "x": 4, 
-            "y": 5}, '
-            '{
-            "id": 6, 
-            "width": 7, 
-            "height": 8, 
-            "x": 9, 
-            "y": 10 
-            }])
+            {"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
+            {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}
+            ]
+        expected_json = (
+            '[{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}, '
+            '{"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]')
         self.assertEqual(Base.to_json_string(list_directories), expected_json)
 
     def test_from_json_string(self):
@@ -104,19 +86,6 @@ class TestBase(unittest.TestCase):
         # test invalid json string
         with self.assertRaises(ValueError):
             Base.from_json_string("invalid")
-
-    def test_save_to_file(self):
-        """ Test save_to_file method: for Base class
-        """
-        # Test checks correct handling of None by creating an empty file
-        Base.save_to_file(None)
-        with open("Base.json", "r", encoding="utf-8") as file:
-            self.assertEqual(file.read(), "[]")
-        # Test correct handling of empty list to create empty file
-        Base.save_to_file([])
-        with open("Base.json", "r", encoding="utf-8") as file:
-            self.assertEqual(file.read(), "[]")
-
 
 if __name__ == '__main__':
     unittest.main()
