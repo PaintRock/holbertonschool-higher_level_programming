@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 import unittest
+import io
+import sys
 from models.base import Base
-
 
 class TestBase(unittest.TestCase):
 
@@ -33,7 +34,7 @@ class TestBase(unittest.TestCase):
     def test_constructor_without_id(self):
         obj1 = Base()
         obj2 = Base()
-        self.assertEqual(obj1.id, 1)
+        self.assertEqual(obj1.id, )
         self.assertEqual(obj2.id, 2)
 
     def test_to_json_string(self):
