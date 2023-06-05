@@ -53,12 +53,30 @@ class TestBase(unittest.TestCase):
         self.assertEqual(Base.to_json_string(None), "[]")
         # test normal list
         list_directories = [
-            {"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
-            {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}
-            ]
-        expected_json = (
-            '[{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}, '
-            '{"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]')
+            {"id": 1,
+            "width": 2, 
+            "height": 3, 
+            "x": 4, 
+            "y": 5},
+            {"id": 6,
+            "width": 7, 
+            "height": 8, 
+            "x": 9, 
+            "y": 10
+            }]
+        expected_json = ('[{
+            "id": 1, 
+            "width": 2, 
+            "height": 3, 
+            "x": 4, 
+            "y": 5}, '
+            '{
+            "id": 6, 
+            "width": 7, 
+            "height": 8, 
+            "x": 9, 
+            "y": 10 
+            }])
         self.assertEqual(Base.to_json_string(list_directories), expected_json)
 
     def test_from_json_string(self):
