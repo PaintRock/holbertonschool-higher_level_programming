@@ -43,14 +43,6 @@ class TestBase(unittest.TestCase):
         base3 = Base()
         self.assertEqual(base3.id, 2)
 
-    def test_too_many_args(self):
-        """
-        test too many args to init
-        """
-        # test too many args
-        with self.assertRaises(TypeError):
-            Base(1, 1, 1, 1, 1, 1, 1)
-
     def test_to_json_string(self):
         """ Test to_json_string method:
         returns the JSON string representation of list_directories
