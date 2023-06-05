@@ -5,6 +5,27 @@ from models.base import Base
 
 class TestBase(unittest.TestCase):
 
+    def setUp(self):
+        """Reset __nb_objects counter. print test"""
+        print("Base setUp")
+        self.capture_output = io.StringIO()
+        sys.stdout = self. capture_output
+
+        Base._Base__nb_objects = 0
+
+        self.base = Base()
+
+    def tearDown(self):
+        print("Base tearDown")
+
+        sys.stdout = sys.__stdout__
+
+        del self.base
+        try:
+            os.remove("Base.json")
+        except FileNotFoundError:
+            pass
+
     def test_constructor_with_id(self):
         obj = Base(10)
         self.assertEqual(obj.id, 10)
