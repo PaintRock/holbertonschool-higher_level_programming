@@ -1,4 +1,14 @@
+#!/usr/bin/python3
+import inspect
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 import unittest
+import pep8
+import json
+import os
+
+
 from models.base import Base
 
 class TestBase(unittest.TestCase):
