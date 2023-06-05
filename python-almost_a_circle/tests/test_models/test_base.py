@@ -33,12 +33,6 @@ class TestBase(unittest.TestCase):
         except FileNotFoundError:
             pass
 
-    def test_print(self):
-        """ test print method """
-        print("Hello, world!")
-        self.assertEqual(self.capture_output.getvalue(), "Hello, world!\n")
-        print("Hello, world!", file=sys.__stdout__)
-
     # test id assignment and if it increments correctly
     def test_id(self):
         """Test __init__ method:
