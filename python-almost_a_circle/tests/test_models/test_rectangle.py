@@ -14,6 +14,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_with_string_parameters(self):
         r1 = Rectangle("1", 2)
+        #Test for \"4" cases
         self.assertIsNotNone(r1)
         self.assertEqual(r1.width, 1)
         self.assertEqual(r1.height, 2)
