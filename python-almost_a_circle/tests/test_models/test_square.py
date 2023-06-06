@@ -4,6 +4,7 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+from models.square import Square
 
 
 class TestSqure(unittest.TestCase):
@@ -37,3 +38,6 @@ class TestSqure(unittest.TestCase):
         self.assertIsNotNone(s)
         # Additional test for specific dimensions
         self.assertEqual(s.width, 1)
+
+if __name__ == '__main__':
+    unittest.main()
