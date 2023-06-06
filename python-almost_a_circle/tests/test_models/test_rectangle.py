@@ -11,7 +11,32 @@ class TestRectangle(unittest.TestCase):
         # Additional test for specific dimensions
         self.assertEqual(r.width, 1)
         self.assertEqual(r.height, 2)
-   
+
+    def test_rectangle_with_string_parameters(self):
+        r1 = Rectangle("1", 2)
+        self.assertIsNotNone(r1)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+
+        r2 = Rectangle(1, "2")
+        self.assertIsNotNone(r2)
+        self.assertEqual(r2.width, 1)
+        self.assertEqual(r2.height, 2)
+
+        r3 = Rectangle(1, 2, "3")
+        self.assertIsNotNone(r3)
+        self.assertEqual(r3.width, 1)
+        self.assertEqual(r3.height, 2)
+        self.assertEqual(r3.x, 0)
+        self.assertEqual(r3.y, 0)
+
+        r4 = Rectangle(1, 2, 3, "4")
+        self.assertIsNotNone(r4)
+        self.assertEqual(r4.width, 1)
+        self.assertEqual(r4.height, 2)
+        self.assertEqual(r4.x, 3)
+        self.assertEqual(r4.y, 0)
+
     def test_area(self):
         # Create a rectangle with width=3 and height=4
         rectangle = Rectangle(3, 4)
