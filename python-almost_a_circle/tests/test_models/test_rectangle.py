@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
@@ -11,7 +12,7 @@ class TestRectangle(unittest.TestCase):
         # Additional test for specific dimensions
         self.assertEqual(r.width, 1)
         self.assertEqual(r.height, 2)
-    
+
     def test_area(self):
         # Create a rectangle with width=3 and height=4
         rectangle = Rectangle(3, 4)
