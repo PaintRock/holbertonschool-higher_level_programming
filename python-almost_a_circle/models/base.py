@@ -55,6 +55,7 @@ class Base:
     def load_from_file(cls):
         filename = cls.__name__ + ".json"
         instances = []
+
         try:
             with open(filename, 'r') as file:
                 json_data = file.read()
@@ -62,4 +63,5 @@ class Base:
                 instances = [cls.create(**obj) for obj in data]
         except FileNotFoundError:
             pass
+
         return instances
