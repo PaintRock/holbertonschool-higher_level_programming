@@ -1,37 +1,9 @@
 #!/usr/bin/python3
-""" This module is a unittest for the R class """
-
 import unittest
-import os
-import io
-import sys
 from models.rectangle import Rectangle
 
 
-    class TestRctangle(unittest.TestCase):
-    """ test class for Rectangle class """
-    # setup and teardown methods are called before and after each test
-    def setUp(self):
-        """Reset the __nb_objects counter.
-        print test"""
-        print("Rectangle setUp")
-        self.capture_output = io.StringIO()
-        sys.stdout = self. capture_output
-
-        Base._Rectangle__nb_objects = 0
-
-        self.base = Rectangle()
-
-    def tearDown(self):
-        print("Rectangle tearDown")
-
-        sys.stdout = sys.__stdout__
-
-        del self.rectangle
-        try:
-            os.remove("Rectangle.json")
-        except FileNotFoundError:
-            pass
+class TestRectangle(unittest.TestCase):
 
     def test_area(self):
         # Create a rectangle with width=3 and height=4
@@ -77,6 +49,7 @@ from models.rectangle import Rectangle
         rectangle = Rectangle(3, 4, 1, 2, 42)
         # Check if the string representation is correct
         self.assertEqual(str(rectangle), "[Rectangle] (42) 1/2 - 3/4")
+
 
 if __name__ == '__main__':
     unittest.main()
