@@ -37,16 +37,36 @@ class Square(Rectangle):
             "y": self.y
         }
 
-    def update(self, *args, **kwargs):
-        """ Public instance method that assigns an argument to each
-        attribute."""
+     def update(self, *args, **kwargs):
+        """
+        Assigns a key:value argument to each attribute
+        """
+        if args:
+            if len(args) == 1:
+                self.id = args[0]
+            if len(args) == 2:
+                self.id = args[0]
+                self.height = args[1]
+                self.width = args[1]
+            if len(args) == 3:
+                self.id = args[0]
+                self.height = args[1]
+                self.width = args[1]
+                self.x = args[2]
+            if len(args) == 4:
+                self.id = args[0]
+                self.height = args[1]
+                self.width = args[1]
+                self.x = args[2]
+                self.y = args[3]
 
-        attributes = ["id", 'width', "height", 'x', "y"]
-        #  if args exist and is not empty, use args
-        if args and len(args) > 0:
-            for attribute, value in zip(attributes, args):
-                setattr(self, attribute, value)
-        # if no args exist or args id empty use kwargs
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+        for key, value in kwargs.items():
+            if key == "id":
+                self.id = kwargs['id']
+            if key == "size":
+                self.height = kwargs['size']
+                self.width = kwargs['size']
+            if key == "x":
+                self.x = kwargs['x']
+            if key == "y":
+                self.y = kwargs['y']
