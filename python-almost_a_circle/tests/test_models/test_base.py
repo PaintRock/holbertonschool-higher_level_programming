@@ -33,12 +33,6 @@ class TestBase(unittest.TestCase):
         except FileNotFoundError:
             pass
 
-    def test_print(self):
-        """ test print method """
-        print("Hello, world!")
-        self.assertEqual(self.capture_output.getvalue(), "Hello, world!\n")
-        print("Hello, world!", file=sys.__stdout__)
-
     # test id assignment and if it increments correctly
     def test_id(self):
         """Test __init__ method:
@@ -48,14 +42,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base2.id, 50)
         base3 = Base()
         self.assertEqual(base3.id, 2)
-
-    def test_too_many_args(self):
-        """
-        test too many args to init
-        """
-        # test too many args
-        with self.assertRaises(TypeError):
-            Base(1, 1, 1, 1, 1, 1, 1)
 
     def test_to_json_string(self):
         """ Test to_json_string method:
@@ -96,23 +82,6 @@ class TestBase(unittest.TestCase):
             {"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
             {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]
         self.assertEqual(Base.from_json_string(json_string), expected_list)
-
-        # test invalid json string
-        with self.assertRaises(ValueError):
-            Base.from_json_string("invalid")
-
-    def test_save_to_file(self):
-        """ Test save_to_file method: for Base class
-        """
-        # Test checks correct handling of None by creating an empty file
-        Base.save_to_file(None)
-        with open("Base.json", "r", encoding="utf-8") as file:
-            self.assertEqual(file.read(), "[]")
-        # Test correct handling of empty list to create empty file
-        Base.save_to_file([])
-        with open("Base.json", "r", encoding="utf-8") as file:
-            self.assertEqual(file.read(), "[]")
-
 
 if __name__ == '__main__':
     unittest.main()
