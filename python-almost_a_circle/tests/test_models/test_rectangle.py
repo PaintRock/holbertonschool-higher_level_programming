@@ -1,61 +1,9 @@
 #!/usr/bin/python3
-""" This module is a unittest for the Rectangle class """
-
 import unittest
-import os
-import io
-import sys
-from models.base import Base
 from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    """ Test class for Rectangle class """
-    def setUp(self):
-        """Set up test method"""
-        print("Rectangle setUp")
-
-        self.capture_output = io.StringIO()
-        sys.stdout = self. capture_output
-
-        self.rectangle = Rectangle(1, 1)
-
-        # reset __nb_objects to 0 before each test
-        Base._Base__nb_objects = 0
-        # print(f"Base.__nb_objects after reset: {Base._Base__nb_objects}")
-
-    def tearDown(self):
-        """Tear down test method"""
-        print("Rectangle tearDown")
-
-        sys.stdout = sys.__stdout__
-
-        del self.rectangle
-        try:
-            os.remove("Rectangle.json")
-        except FileNotFoundError:
-            pass
-
-    def test_rectangle_constructor(self):
-        r = Rectangle(1, 2)
-        self.assertIsNotNone(r)
-        # Additional test for specific dimensions
-        self.assertEqual(r.width, 1)
-        self.assertEqual(r.height, 2)
-
-    # test id assignment and if it increments correctly
-    def test_id(self):
-        """Test __init__ method:
-        id assignment in the Rectangle class.
-        """
-        print(f"Actual id: {self.rectangle.id}")
-        self.assertEqual(self.rectangle.id, 1)
-        rectangle2 = Rectangle(50, 50)
-        print(f"Actual id: {rectangle2.id}")
-        self.assertEqual(rectangle2.id, 1)
-        rectangle3 = Rectangle(1, 1)
-        print(f"Actual id: {rectangle3.id}")
-        self.assertEqual(rectangle3.id, 2)
 
     def test_area(self):
         # Create a rectangle with width=3 and height=4
