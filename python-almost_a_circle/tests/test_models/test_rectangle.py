@@ -5,6 +5,13 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
 
+    def test_rectangle_constructor(self):
+        r = Rectangle(1, 2)
+        self.assertIsNotNone(r)
+        # Additional test for specific dimensions
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+   
     def test_area(self):
         # Create a rectangle with width=3 and height=4
         rectangle = Rectangle(3, 4)
