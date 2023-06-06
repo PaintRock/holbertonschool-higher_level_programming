@@ -38,9 +38,7 @@ class Square(Rectangle):
         }
 
      def update(self, *args, **kwargs):
-        """
-        Assigns a key:value argument to each attribute
-        """
+        """Assigns a key and value argument to each attribute """
         if args:
             if len(args) == 1:
                 self.id = args[0]
@@ -61,6 +59,7 @@ class Square(Rectangle):
                 self.y = args[3]
 
         for key, value in kwargs.items():
+            """dem key values"""
             if key == "id":
                 self.id = kwargs['id']
             if key == "size":
