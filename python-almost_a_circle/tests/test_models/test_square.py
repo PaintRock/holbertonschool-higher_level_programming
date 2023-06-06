@@ -7,13 +7,12 @@ from models.base import Base
 from models.square import Square
 
 
-class TestSqure(unittest.TestCase):
-"""Why no one knows"""
-    
-     def setUp(self):
+class TestSquare(unittest.TestCase):
+    """Why, no one knows"""
+    def setUp(self):
         """Reset the __nb_objects counter.
         print test"""
-        print("Square setUp")
+        print("Bsse setUp")
         self.capture_output = io.StringIO()
         sys.stdout = self. capture_output
 
