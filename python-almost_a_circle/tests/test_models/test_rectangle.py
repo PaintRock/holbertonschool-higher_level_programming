@@ -36,6 +36,13 @@ class TestRectangle(unittest.TestCase):
         except FileNotFoundError:
             pass
 
+    def test_rectangle_constructor(self):
+        r = Rectangle(1, 2)
+        self.assertIsNotNone(r)
+        # Additional test for specific dimensions
+        self.assertEqual(r.width, 1)
+        self.assertEqual(r.height, 2)
+
     # test id assignment and if it increments correctly
     def test_id(self):
         """Test __init__ method:
@@ -49,8 +56,6 @@ class TestRectangle(unittest.TestCase):
         rectangle3 = Rectangle(1, 1)
         print(f"Actual id: {rectangle3.id}")
         self.assertEqual(rectangle3.id, 2)
-
-class TestRectangle(unittest.TestCase):
 
     def test_area(self):
         # Create a rectangle with width=3 and height=4
