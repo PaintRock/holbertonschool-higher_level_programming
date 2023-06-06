@@ -5,34 +5,33 @@ import unittest
 import os
 import io
 import sys
-from models.base import Base
+from models.rectangle import Rectangle
 
 
-"""class TestBase(unittest.TestCase):
-    """ test class for Base class """
+    class TestRctangle(unittest.TestCase):
+    """ test class for Rectangle class """
     # setup and teardown methods are called before and after each test
     def setUp(self):
         """Reset the __nb_objects counter.
         print test"""
-        print("Base setUp")
+        print("Rectangle setUp")
         self.capture_output = io.StringIO()
         sys.stdout = self. capture_output
 
-        Base._Base__nb_objects = 0
+        Base._Rectangle__nb_objects = 0
 
-        self.base = Base()
+        self.base = Rectangle()
 
     def tearDown(self):
-        print("Base tearDown")
+        print("Rectangle tearDown")
 
         sys.stdout = sys.__stdout__
 
-        del self.base
+        del self.rectangle
         try:
-            os.remove("Base.json")
+            os.remove("Rectangle.json")
         except FileNotFoundError:
             pass
-class TestRectangle(unittest.TestCase):
 
     def test_area(self):
         # Create a rectangle with width=3 and height=4
@@ -80,4 +79,4 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(rectangle), "[Rectangle] (42) 1/2 - 3/4")
 
 if __name__ == '__main__':
-    unittest.main()"""
+    unittest.main()
