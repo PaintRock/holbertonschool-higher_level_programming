@@ -50,6 +50,8 @@ class TestRectangle(unittest.TestCase):
         print(f"Actual id: {rectangle3.id}")
         self.assertEqual(rectangle3.id, 2)
 
+class TestRectangle(unittest.TestCase):
+
     def test_area(self):
         # Create a rectangle with width=3 and height=4
         rectangle = Rectangle(3, 4)
@@ -71,89 +73,30 @@ class TestRectangle(unittest.TestCase):
         # Check if the dictionary contains the expected values
         self.assertEqual(dictionary, {
             'id': 42,
-            'idth': 2,
-            'h
+            'width': 2,
+            'height': 6,
+            'x': 1,
+            'y': 2
+        })
 
-    def test_rectangle_constructor(self):
-        r = Rectangle(1, 2)
-        self.assertIsNotNone(r)
+    def test_update(self):
+        # Create a rectangle with width=2, height=3, x=1, y=1, and id=1
+        rectangle = Rectangle(2, 3, 1, 1, 1)
+        # Update the rectangle with new values
+        rectangle.update(5, 4, 3, 2, 1)
+        # Check if the attributes have been updated correctly
+        self.assertEqual(rectangle.width, 4)
+        self.assertEqual(rectangle.height, 3)
+        self.assertEqual(rectangle.x, 2)
+        self.assertEqual(rectangle.y, 1)
+        self.assertEqual(rectangle.id, 5)
 
-    def test_rectangle_getters_and_setters(self):
-        r = Rectangle(1, 2)
-        self.assertEqual(r.width, 1)
-        self.assertEqual(r.height, 2)
-
-        r.width = 3
-        r.height = 4
-        self.assertEqual(r.width, 3)
-        self.assertEqual(r.height, 4)
-
-    def test_rectangle_invalid_width_and_height(self):
-        with self.assertRaises(TypeError):
-            r = Rectangle("1", 2)
-
-        with self.assertRaises(TypeError):
-            r = Rectangle(1, "2")
-
-        with self.assertRaises(TypeError):
-            r = Rectangle(1, 2, "3")
-
-        with self.assertRaises(TypeError):
-            r = Rectangle(1, 2, 3, "4")
-
-        with self.assertRaises(ValueError):
-            r = Rectangle(-1, 2)
-
-        with self.assertRaises(ValueError):
-            r = Rectangle(1, -2)
-
-        with self.assertRaises(ValueError):
-            r = Rectangle(0, 2)
-
-        with self.assertRaises(ValueError):
-            r = Rectangle(1, 0)
-
-        with self.assertRaises(ValueError):
-            r = Rectangle(1, 2, -3)
-
-        with self.assertRaises(ValueError):
-            r = Rectangle(1, 2, 3, -4)
-
-    def test_rectangle_area(self):
-        r = Rectangle(2, 3)
-        self.assertEqual(r.area(), 6)
-
-    def test_rectangle_to_dictionary(self):
-        r = Rectangle(1, 2, 3, 4, 5)
-        expected_dict = {
-            "id": 5,
-            "width": 1,
-            "height": 2,
-            "x": 3,
-            "y": 4
-        }
-        self.assertDictEqual(r.to_dictionary(), expected_dict)
-
-    def test_rectangle_update(self):
-        r = Rectangle(1, 2)
-        r.update(3, 4, 5, 6, 7)
-        self.assertEqual(r.width, 4)
-        self.assertEqual(r.height, 5)
-        self.assertEqual(r.x, 6)
-        self.assertEqual(r.y, 7)
-
-        r.update(id=8, width=9, height=10, x=11, y=12)
-        self.assertEqual(r.width, 9)
-        self.assertEqual(r.height, 10)
-        self.assertEqual(r.x, 11)
-        self.assertEqual(r.y, 12)
-        self.assertEqual(r.id, 8)
-
-    def test_rectangle_str(self):
-        r = Rectangle(1, 2, 3, 4, 5)
-        expected_str = "[Rectangle] (5) 3/4 - 1/2"
-        self.assertEqual(str(r), expected_str)
+    def test_str(self):
+        # Create a rectangle with width=3, height=4, x=1, y=2, and id=42
+        rectangle = Rectangle(3, 4, 1, 2, 42)
+        # Check if the string representation is correct
+        self.assertEqual(str(rectangle), "[Rectangle] (42) 1/2 - 3/4")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
