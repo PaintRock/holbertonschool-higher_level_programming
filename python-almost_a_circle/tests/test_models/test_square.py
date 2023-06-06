@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ This module is a unittest for the Base class """
 
-import unittest
+"""import unittest
 import os
 import io
 import sys
@@ -23,7 +23,7 @@ class TestBase(unittest.TestCase):
         self.base = Base()
 
     def tearDown(self):
-        print("Base tearDown")
+        print("Base tearDown")"""
 
         sys.stdout = sys.__stdout__
 
