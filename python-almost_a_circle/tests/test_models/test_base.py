@@ -87,5 +87,5 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(ValueError):
             Base.from_json_string("invalid")
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()

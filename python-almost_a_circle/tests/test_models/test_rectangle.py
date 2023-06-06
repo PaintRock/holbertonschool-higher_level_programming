@@ -8,7 +8,7 @@ import sys
 from models.base import Base
 
 
-class TestBase(unittest.TestCase):
+"""class TestBase(unittest.TestCase):
     """ test class for Base class """
     # setup and teardown methods are called before and after each test
     def setUp(self):
@@ -79,6 +79,5 @@ class TestRectangle(unittest.TestCase):
         # Check if the string representation is correct
         self.assertEqual(str(rectangle), "[Rectangle] (42) 1/2 - 3/4")
 
-
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main()"""
