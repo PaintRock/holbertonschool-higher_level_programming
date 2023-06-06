@@ -37,7 +37,7 @@ class Square(Rectangle):
             "y": self.y
         }
 
-     def update(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         """Assigns a key and value argument to each attribute """
         if args:
             if len(args) == 1:
