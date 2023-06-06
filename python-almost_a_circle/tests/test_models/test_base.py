@@ -57,8 +57,17 @@ class TestBase(unittest.TestCase):
             {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}
             ]
         expected_json = (
-            '[{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}, '
-            '{"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}]')
+            'id: 1\n'
+            'width: 2\n'
+            'height: 3\n'
+            'x: 4\n'
+            'y: 5\n'
+            'id: 6\n'
+            'width: 7\n'
+            'height: 8\n'
+            'x: 9\n'
+            'y: 10\n'
+            )
         self.assertEqual(Base.to_json_string(list_directories), expected_json)
 
     def test_from_json_string(self):
@@ -87,5 +96,5 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(ValueError):
             Base.from_json_string("invalid")
 
-if __name__ == '__main__':
-    unittest.main()
+    if __name__ == '__main__':
+        unittest.main()
