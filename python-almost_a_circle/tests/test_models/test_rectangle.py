@@ -66,5 +66,34 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.width, 0)
         self.assertEqual(rectangle.height, 2)
 
+    def test_make_incorrect_rectangle(self):
+        """
+        Tests with errors in making a rectangle
+        """
+        with self.assertRaises(TypeError):
+            Rectangle()
+        with self.assertRaises(TypeError):
+            Rectangle(1, 1, 1, 1, 1, 1)
+        with self.assertRaises(TypeError):
+            Rectangle("width", 1, 1, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(1, "height", 1, 1)
+        with self.assertRaises(TypeError):
+            Rectangle(1, 1, "x", 1)
+        with self.assertRaises(TypeError):
+            Rectangle(1, 1, 1, "y")
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1, 1, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(-4, 1, 1, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0, 1, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(1, -4, 0, 0)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 1, -2, 0)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 1, 0, -7)
+
 if __name__ == '__main__':
     unittest.main()
