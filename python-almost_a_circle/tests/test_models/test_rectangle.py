@@ -58,6 +58,13 @@ class TestRectangle(unittest.TestCase):
         # Check if the string representation is correct
         self.assertEqual(str(rectangle), "[Rectangle] (42) 1/2 - 3/4")
 
+    def make_good_rectangle(self):
+        """more tests for correct triangles from BSb"""
+        rectangle1 = Rectangle(1,2,3,4,5,6,0)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 6)
+        self.assertEqual(rectangle.width, 0)
+        self.assertEqual(rectangle.height, 2)
 
 if __name__ == '__main__':
     unittest.main()
