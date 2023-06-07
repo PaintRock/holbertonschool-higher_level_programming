@@ -12,9 +12,46 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-
 class test_square(unittest.TestCase):
-    """test square"""
+    """
+    This class will unittest the Sectangle class
+    """
+
+    def test_module_docstring(self):
+        """
+        Test rectangle module documentation exists
+        """
+        self.assertTrue(len(__import__('models').square.__doc__) >= 1)
+
+    def test_class_docstring(self):
+        """
+        Test Rectangle class documentation exists
+        """
+        self.assertTrue(len(__import__('models').square.Square.__doc__) >= 1)
+
+    def test_method_docstring(self):
+        """
+        Tests Rectangle methods for documentation
+        """
+        self.assertTrue(len(Square.__init__.__doc__) >= 1)
+        self.assertTrue(len(Square.__str__.__doc__) >= 1)
+        self.assertTrue(len(Square.update.__doc__) >= 1)
+        self.assertTrue(len(Square.to_dictionary.__doc__) >= 1)
+
+    def test_pep8_compliance(self):
+        """
+        Tests to ensure models/rectangle and
+        /tests/test_models/rectangle_base.py are pep8 compliant
+        """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(["models/square.py"])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
+
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(["tests/test_models/test_square.py"])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style errors (and warnings).")
 
     def test_build_a_square(self):
         """
