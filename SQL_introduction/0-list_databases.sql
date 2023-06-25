@@ -1,3 +1,3 @@
-/*This is my comment.*/
+-- list datatbases of the SQL server
 
 SHOW databases;
