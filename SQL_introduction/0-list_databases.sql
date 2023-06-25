@@ -1,3 +1,3 @@
---This is my comment
+--This is my comment.
 
 SHOW databases;
