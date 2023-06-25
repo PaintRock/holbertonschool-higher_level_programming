@@ -1,3 +1,3 @@
 --This is my comment
 
-SHOW databases;
+mysql -h localhost -u root -p -e "SHOW DATABASES;"
