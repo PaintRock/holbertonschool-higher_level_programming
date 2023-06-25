@@ -1,5 +1,3 @@
--- THRU 
+-- THRU tHE LOOKING GLASS
 
-database_name="$1"
-
-USE $database_name; SHOW TABLES;
+SHOW TABLES;
