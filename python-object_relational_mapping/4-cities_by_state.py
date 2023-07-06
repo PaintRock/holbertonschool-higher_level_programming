@@ -17,12 +17,13 @@ def filter_cities(username, password, database):
     cur = db.cursor()
 
     # Execute the query to retrieve states starting with N (upper N)
-    sql_com = "SELECT cities.id, cities.name, states.name\
-        FROM cities JOIN states\
-        ON cities.state_id = state.id\ 
-        ORDER BY cities.id ASC"
+     query = "SELECT cities.id, cities.name, states.name \
+            FROM cities JOIN states \
+            ON cities.state_id = states.id \
+            ORDER by cities.id ASC"
+"
                 
-    cur.execute(sql_com, (sys.argv[4],))
+    cur.execute(query, (sys.argv[4],))
 
     # Fetch all the rows from the query result
     rows = cur.fetchall()
