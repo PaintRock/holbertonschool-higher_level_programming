@@ -15,12 +15,14 @@ def list_states(username, password, database):
 
     # Create a cursor object to interact with the database
     cursor = db.cursor()
-    code = utf8mb4_bin
+
     # Execute the query to retrieve states starting with N (upper N)
-    query = 
-    "SELECT * FROM states WHERE name COLLATE {code} LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states ORDER BY ASC"
     
     cursor.execute(query)
+    for elemets in cursor:
+    if elemets[1].startswith("N"):
+            print(elemets)
 
     # Fetch all the rows from the query result
     rows = cursor.fetchall()
@@ -42,3 +44,4 @@ if __name__ == '__main__':
         password = sys.argv[2]
         database = sys.argv[3]
         list_states(username, password, database)
+    
