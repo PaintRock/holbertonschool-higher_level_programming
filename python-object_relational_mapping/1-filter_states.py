@@ -17,10 +17,7 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute the query to retrieve states starting with N (upper N)
-    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
-    search_string = 'N%'
-
-    cursor.execute(query, (search_string,))
+    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id")
 
     # Fetch all the rows from the query result
     rows = cursor.fetchall()
