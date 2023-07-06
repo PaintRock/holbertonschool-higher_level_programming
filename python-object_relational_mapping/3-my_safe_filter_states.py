@@ -20,7 +20,6 @@ def filter_states(username, password, database, state_name):
     sql_com = "SELECT * FROM states WHERE name = %s ORDER BY id"
     cur.execute(sql_com, (sys.argv[4],))
 
-
     # Fetch all the rows from the query result
     rows = cur.fetchall()
 
@@ -35,7 +34,8 @@ def filter_states(username, password, database, state_name):
 
 if __name__ == '__main__':
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database> <state_name>")
+        print("Usage: python script.py <username> <password>\
+            <database> <state_name>")
     else:
         username = sys.argv[1]
         password = sys.argv[2]
