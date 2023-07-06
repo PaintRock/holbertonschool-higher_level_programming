@@ -6,10 +6,10 @@ import sys
 
 def list_states(username, password, database):
     # Connect to the MySQL server
-    db = MySQLdb.connect(host="localhost", 
-                         port=3306, 
-                         user=username, 
-                         passwd=password, 
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=username,
+                         passwd=password,
                          db=database
                          )
 
@@ -17,7 +17,9 @@ def list_states(username, password, database):
     cursor = db.cursor()
 
     # Execute the query to retrieve states starting with N (upper N)
-    query = "SELECT * FROM states WHERE name OLLATE utf8mb4_bin LIKE 'N%' ORDER BY id ASC"
+    query = 
+    "SELECT * FROM states WHERE name COLLATE utf8mb4_bin LIKE 'N%' ORDER BY id ASC"
+    
     cursor.execute(query)
 
     # Fetch all the rows from the query result
@@ -30,6 +32,7 @@ def list_states(username, password, database):
     # Close the cursor and database connection
     cursor.close()
     db.close()
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
