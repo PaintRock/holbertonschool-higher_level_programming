@@ -30,12 +30,12 @@ def list_states(username, password, database):
     cursor.close()
     db.close()
 
-# Provide the MySQL username, password, 
+
+# Provide the MySQL username, password,
 # and database name as command-line arguments
 if __name__ == '__main__':
-
-
     import sys
+
     if len(sys.argv) != 4:
         print("Usage: python script.py <username> <password> <database>")
     else:
