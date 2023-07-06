@@ -34,7 +34,8 @@ def filter_states(username, password, database, state_name):
 
 if __name__ == '__main__':
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database> <state_name>")
+        print("Usage: python script.py <username> <password>\
+            <database> <state_name>")
     else:
         username = sys.argv[1]
         password = sys.argv[2]
