@@ -14,20 +14,20 @@ def list_states(username, password, database):
                          )
 
     # Create a cursor object to interact with the database
-    cursor = db.cursor()
+    cur = db.cursor()
 
     # Execute the query to retrieve states starting with N (upper N)
-    cursor.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id")
+    cur.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%' ORDER BY id")
 
     # Fetch all the rows from the query result
-    rows = cursor.fetchall()
+    rows = cur.fetchall()
 
     # Display the results
     for row in rows:
         print(row)
 
     # Close the cursor and database connection
-    cursor.close()
+    cur.close()
     db.close()
 
 
