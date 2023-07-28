@@ -2,5 +2,7 @@
 """ write a simple javascript """
 
 
+{
 let myVar = "JavaScript is amazing"
+}
 console.log(myVar)
