@@ -1,6 +1,6 @@
 #!/usr/bin/node
-const = a;
-const = b; 
-const add = a + b;
- console.log('add')
- 
+function add(a, b) {
+    return a + b;
+}
+
+module.exports = { add };
