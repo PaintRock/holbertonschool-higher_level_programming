@@ -1,7 +1,4 @@
 #!/usr/bin/node
 """ write a simple javascript """
-
-
-
-const myVar = "JavaScript is amazing";
-console.log(myVar);
+const MYVAR = "JavaScript is amazing";
+console.log(MYVAR);
