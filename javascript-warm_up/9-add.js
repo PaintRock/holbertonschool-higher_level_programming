@@ -7,18 +7,12 @@ function add(a, b) {
 }
 
 const args = process.argv.slice(2);
+const num1 = parseInt(args[0], 10);
+const num2 = parseInt(args[1], 10);
 
-if (args.length < 2) {
-  console.log("Please provide two valid integers.");
+if (isNaN(num1) || isNaN(num2)) {
+  console.log("NaN");
 } else {
-  const num1 = parseInt(args[0], 10);
-  const num2 = parseInt(args[1], 10);
-
-  if (isNaN(num1) || isNaN(num2)) {
-    console.log("NaN");
-  } else {
-    const result = add(num1, num2);
-    console.log(result);
-  }
+  const result = add(num1, num2);
+  console.log(result);
 }
-
