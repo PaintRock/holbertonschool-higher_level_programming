@@ -1,7 +1,6 @@
 #!/usr/bin/node
 // Check the number of arguments
-let numOfArgs = process.argv.length - 2;
-
+const numOfArgs = process.argv.length - 2;
 // Print the message depending on the number of arguments
 if (numOfArgs === 0) {
   console.log('No argument');
