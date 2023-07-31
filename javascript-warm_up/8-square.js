@@ -1,21 +1,21 @@
 #!/usr/bin/node
-const size = process.argv[2];
 
-if (!size || isNaN(size)) {
-  console.log('Missing size');
+function add(a, b) {
+  return a + b;
+}
+
+const args = process.argv.slice(2);
+
+if (args.length < 2) {
+  console.log('Please provide two valid integers.');
 } else {
-  const squareSize = parseInt(size, 10);
-  let square = '';
+  const num1 = parseInt(args[0], 10);
+  const num2 = parseInt(args[1], 10);
 
-  for (let row = 0; row < squareSize; row++) {
-    for (let col = 0; col < squareSize; col++) {
-      square += 'X';
-      if (col < squareSize - 1) {
-        square += ' ';
-      }
-    }
-    square += '\n';
+  if (isNaN(num1) || isNaN(num2)) {
+    console.log('NaN');
+  } else {
+    const result = add(num1, num2);
+    console.log(result);
   }
-
-  console.log(square);
 }
