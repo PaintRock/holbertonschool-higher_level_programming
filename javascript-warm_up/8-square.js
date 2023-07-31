@@ -5,17 +5,12 @@ if (!size || isNaN(size)) {
   console.log('Missing size');
 } else {
   const squareSize = parseInt(size, 10);
-  let square = '';
 
   for (let row = 0; row < squareSize; row++) {
+    let squareRow = '';
     for (let col = 0; col < squareSize; col++) {
-      square += 'X';
-      if (col < squareSize - 1) {
-        square += ' ';
-      }
+      squareRow += 'X';
     }
-    square += '\n';
+    console.log(squareRow);
   }
-
-  console.log(square);
 }
