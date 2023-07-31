@@ -1,16 +1,17 @@
 #!/usr/bin/node
-const size = process.argv[2];
+const args = process.argv.slice(2);
 
-if (!size || isNaN(size)) {
-  console.log('Missing size');
+if (args.length <= 1) {
+  console.log(0);
 } else {
-  const squareSize = parseInt(size, 10);
+  // Convert arguments to an array of integers
+  const numbers = args.map(Number);
 
-  for (let row = 0; row < squareSize; row++) {
-    let squareRow = '';
-    for (let col = 0; col < squareSize; col++) {
-      squareRow += 'X';
-    }
-    console.log(squareRow);
-  }
+  // Sort the array in ascending order
+  const sortedNumbers = numbers.sort((a, b) => a - b);
+
+  // Get the second last element in the sorted array
+  const secondBiggest = sortedNumbers[sortedNumbers.length - 2];
+
+  console.log(secondBiggest);
 }
