@@ -7,10 +7,12 @@
 
 const list = require('./100-data.js');
 
-const newArray = list.map((value, index) => value * index);
+const Array = list.map((x => x * i)
+
+for (let i =0; i < list; i++)
 
 console.log('Initial List:');
 console.log(list);
 
 console.log('\nNew List:');
-console.log(newArray);
+console.log(Array);
