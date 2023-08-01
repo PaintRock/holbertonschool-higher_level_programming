@@ -1,10 +1,7 @@
 #!/usr/bin/node
 class Rectangle {
-    constructor() {
-      // Empty constructor
-    }
+    // Empty class with no constructor or methods
   }
   
-  const r1 = new Rectangle();
-  console.log(r1);
+  module.exports = Rectangle;
   
