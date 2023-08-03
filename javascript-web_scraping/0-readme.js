@@ -1,6 +1,5 @@
 #!/usr/bin/node
 /* Write a script that prints the contents of a file */
-#!/usr/bin/node
 const fs = require('fs');
 const path = process.argv[2];
 
