@@ -2,7 +2,7 @@
 /* Starrwars */
 const get = require('request');
 const id = process.argv[2];
-const url = 'https://swapi-api.hbtn.io/api/films/:id';
+const url = 'https://swapi-api.hbtn.io/api/films/id';
 
 get(url, 'utf-8', function (error, response, data) {
   if (error) {
