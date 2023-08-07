@@ -11,7 +11,7 @@ request(url, function (error, response, body) {
     const data = JSON.parse(body).results;
     let count = 0;
     for (const film of data) {
-      for (const character of film['characters']) {
+      for (const character of film.characters) {
         if (character.includes(ID)) {
           count++;
         }
