@@ -5,7 +5,7 @@ const apiURL = 'https://jsonplaceholder.typicode.com/todos';
 
 async function computeCompletedTasks(apiURL) {
   try {
-    const response = await axios.get(apiURL);
+    const response = await request.get(apiURL);
     const todos = response.data;
 
     const userCompletedTasks = {};
