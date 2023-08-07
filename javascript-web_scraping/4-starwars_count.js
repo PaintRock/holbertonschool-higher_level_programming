@@ -10,8 +10,8 @@ request(url, function (error, response, body) {
   } else {
     const data = JSON.parse(body).results;
     let count = 0;
-    for (let film of data) {
-      for (let character of film['characters']) {
+    for (const film of data) {
+      for (const character of film['characters']) {
         if (character.includes(ID)) {
           count++;
         }
