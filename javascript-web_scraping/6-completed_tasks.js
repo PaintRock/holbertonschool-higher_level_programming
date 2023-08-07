@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const url = process.argv[2];
-const data = JSON.parse(body);
+const data = JSON.parse;
 const length = data.length;
 const countDict = {};
 
