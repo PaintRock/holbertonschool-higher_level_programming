@@ -1,39 +1,25 @@
 #!/usr/bin/node
 const request = require('request');
+const url = process.argv[2];
 
-const apiURL = 'https://jsonplaceholder.typicode.com/todos';
-
-async function computeCompletedTasks(apiURL) {
-  try {
-    const response = await request.get(apiURL);
-    const todos = response.data;
-
-    const userCompletedTasks = {};
-
-    todos.forEach((todo) => {
-      if (todo.completed) {
-        const userId = todo.userId;
-        userCompletedTasks[userId] = (userCompletedTasks[userId] || 0) + 1;
+request(url, function (error, response, body) {
+  if (error) {
+    console.log(error);
+  } else {
+    const data = JSON.parse(body);
+    const length = data.length;
+    let countDict = {};
+    for (let i = 1; i <= 10; i++) { // loop through every userId
+      let count = 0;
+      for (let j = 0; j < length; j++) { // loop through every todo item
+        if (data[j].userId === i && data[j].completed === true) {
+          count++;
+        }
       }
-    });
-
-    return userCompletedTasks;
-  } catch (error) {
-    console.error(`Error fetching data: ${error.message}`);
-    return null;
-  }
-}
-
-async function main() {
-  const completedTasks = await computeCompletedTasks(apiURL);
-
-  if (completedTasks) {
-    console.log('Number of completed tasks by user id:');
-    for (const userId in completedTasks) {
-      console.log(`User ID ${userId}: ${completedTasks[userId]} completed tasks`);
+      if (count > 0) {
+        countDict[i] = count;
+      }
     }
+    console.log(countDict);
   }
-}
-
-main();
-
+});
