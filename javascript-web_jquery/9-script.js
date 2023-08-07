@@ -2,6 +2,8 @@
 // adds a click butoon that turns to red.
 // updates the text color of HTML tag HEADER to red when the user
 // clicks on the tag DIV#red_header
-$('#red_header').click(function() {
-  $('header').css('color', '#FF0000');
-  });
+const url = https://stefanbohacek.com/hellosalut/?lang=fr
+
+$.get(url, function (data) {
+  $('#sf_wind_speed').text(data['query']['results']['channel']['wind']['speed']);
+});
