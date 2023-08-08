@@ -4,6 +4,6 @@
 // clicks on the tag DIV#red_header
 const url = https://stefanbohacek.com/hellosalut/?lang=fr
 
-$.get(url, function (data) {
-  $('#sf_wind_speed').text(data['query']['results']['channel']['wind']['speed']);
-});
+$.get("https://stefanbohacek.com/hellosalut/?lang=fr", function(data) {
+    $('#hello').text(data.hello);
+  });
