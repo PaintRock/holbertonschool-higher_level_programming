@@ -1,2 +1,2 @@
 // Select the <header> element using document.querySelector
-document.querySelector('HEADER').style.color = '#FF0000';
+document.querySelector('header').style.color = '#FF0000';
